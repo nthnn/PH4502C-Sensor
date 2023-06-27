@@ -68,7 +68,7 @@ To begin using the PH4502 Sensor Library, follow these simple steps:
     ```cpp
     void loop() {
         // Read pH value
-        float pHValue = sensor.read_ph_level();
+        float pHValue = ph4502c.read_ph_level();
     
         // Do something with the pH value
         // Delay before next reading

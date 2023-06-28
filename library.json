@@ -1,0 +1,21 @@
+{
+    "name": "PH4502C-Sensor",
+    "version": "1.0.0",
+    "description": "Arduino library for PH4502C sensor.",
+    "keywords": "PH4502C, Water Quality Sensor",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/nthnn/PH4502C-Sensor"
+    },
+    "authors": [
+      {
+        "name": "nathannestein",
+        "email": "nathanneisip@gmail.com",
+        "url": "https://nthnn.github.io/"
+      }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/nthnn/PH4502C-Sensor",
+    "frameworks": "*",
+    "platforms": "*"
+}

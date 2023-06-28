@@ -18,6 +18,16 @@ Automatic temperature compensation for more accurate readings.
 
 To use the PH4502 Sensor Arduino Library, follow these steps:
 
+### Installation on Arduino IDE
+
+Just type "PH4502C-Sensor" on the Library Manager of the Arduino IDE.
+
+<p align="center">
+    <img src="assets/screenshot-1.png" width="300" />
+</p>
+
+Alternatively you can follow the steps below:
+
 1. Download the library by clicking on the "Download" button or clone it using Git:
 
     ```batch
@@ -32,6 +42,14 @@ To use the PH4502 Sensor Arduino Library, follow these steps:
 3. Launch the Arduino IDE. Then, click on "Sketch" and then navigate to Include Library. You should see the newly added "PH4502-Sensor" option. Click on it to include the library in your sketch.
 
 Now you are ready to use the PH4502 Sensor Library in your Arduino projects.
+
+### Installation on PlatformIO
+
+Type "PH4502C-Sensor" on the PlatformIO library registry, and click "Add Project." And that's it!
+
+<p align="center">
+    <img src="assets/screenshot-2.png" width="400" />
+</p>
 
 ## Getting Started
 

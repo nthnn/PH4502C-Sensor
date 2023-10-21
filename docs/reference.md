@@ -6,47 +6,29 @@ The PH4502C Sensor Arduino Library provides a comprehensive set of classes, func
 
 The PH4502C_Sensor class represents the PH4502C sensor and provides methods to initialize, calibrate, and read pH levels and temperature. It offers multiple constructors to accommodate different configuration needs.
 
+
 ### Constructors
 
-**PH4502C_Sensor(uint16_t ph_level_pin, uint16_t temp_pin)**
-
-- Parameters:
-    - ```ph_level_pin``` *(uint16_t)*: The Arduino analog pin connected to the pH level output of the sensor.
-
-    - ```temp_pin``` *(uint16_t)*: The Arduino analog pin connected to the temperature output of the sensor.
-
-**PH4502C_Sensor(uint16_t ph_level_pin, uint16_t temp_pin, float calibration)**
-
-- Parameters:
-    - ```ph_level_pin``` *(uint16_t)*: The Arduino analog pin connected to the pH level output of the sensor.
-
-    - ```temp_pin``` *(uint16_t)*: The Arduino analog pin connected to the temperature output of the sensor.
-
-    - ```calibration``` *(float)*: The calibration value to adjust pH readings.
-
-**PH4502C_Sensor(uint16_t ph_level_pin, uint16_t temp_pin, float calibration, int reading_interval)**
-
-- Parameters:
-    - ```ph_level_pin``` *(uint16_t)*: The Arduino analog pin connected to the pH level output of the sensor.
-
-    - ```temp_pin``` *(uint16_t)*: The Arduino analog pin connected to the temperature output of the sensor.
-
-    - ```calibration``` *(float)*: The calibration value to adjust pH readings.
-
-    - ```reading_interval``` *(int)**: The time interval between consecutive pH level readings in milliseconds.
-
-**PH4502C_Sensor(uint16_t ph_level_pin, uint16_t temp_pin, float calibration, int reading_interval, int reading_count)**
-
-- Parameters:
-    - ```ph_level_pin``` *(uint16_t)*: The Arduino analog pin connected to the pH level output of the sensor.
-
-    - ```temp_pin``` *(uint16_t)*: The Arduino analog pin connected to the temperature output of the sensor.
-
-    - ```calibration``` (float)*: The calibration value to adjust pH readings.
-
-    - ```reading_interval``` *(int)*: The time interval between consecutive pH level readings in milliseconds.
-
-    - ```reading_count``` *(int)**: The number of pH level readings to average when using ```read_ph_level()```.
+```cpp
+/**
+ * @brief Construct a new PH4502C_Sensor object.
+ * 
+ * @param ph_level_pin Analog pin connected to the pH level output of the sensor.
+ * @param temp_pin Analog pin connected to the temperature output of the sensor.
+ * @param calibration Calibration value to adjust pH readings (default is PH4502C_DEFAULT_CALIBRATION).
+ * @param reading_interval Time interval between consecutive pH level readings in milliseconds (default is PH4502C_DEFAULT_READING_INTERVAL).
+ * @param reading_count Number of pH level readings to average when using read_ph_level() (default is PH4502C_DEFAULT_READING_COUNT).
+ * @param adc_resolution ADC resolution used for voltage calculation from the analog read (default is PH4502C_DEFAULT_ADC_RESOLUTION).
+ */
+PH4502C_Sensor(uint16_t ph_level_pin, uint16_t temp_pin,
+               float calibration = PH4502C_DEFAULT_CALIBRATION,
+               int reading_interval = PH4502C_DEFAULT_READING_INTERVAL,
+               int reading_count = PH4502C_DEFAULT_READING_COUNT,
+               float adc_resolution = PH4502C_DEFAULT_ADC_RESOLUTION)
+    : _ph_level_pin(ph_level_pin), _temp_pin(temp_pin),
+      _calibration(calibration), _reading_interval(reading_interval),
+      _reading_count(reading_count), _adc_resolution(adc_resolution) {}
+```
 
 **PH4502C_Sensor::init()**
 
@@ -123,6 +105,39 @@ The ```PH4502C_DEFAULT_READING_COUNT``` constant represents the default number o
 
 ```cpp
 #define PH4502C_DEFAULT_READING_COUNT 10
+```
+
+**PH4502C_DEFAULT_ADC_RESOLUTION**
+
+The `PH4502C_DEFAULT_ADC_RESOLUTION` constant represents the default ADC resolution for the PH4502C sensor. The default value is set to `1024.0`.
+
+```cpp
+#define PH4502C_DEFAULT_ADC_RESOLUTION 1024.0f
+```
+
+**PH4502C_VOLTAGE**
+
+The `PH4502C_VOLTAGE` constant defines the operating voltage for the PH4502C sensor. The value is set to `5.0`.
+
+```cpp
+#define PH4502C_VOLTAGE 5.0f
+```
+
+**PH4502C_MID_VOLTAGE**
+
+The `PH4502C_MID_VOLTAGE` constant defines the voltage that represents a neutral pH reading (pH = 7). The value is set to `2.5`.
+
+```cpp
+#define PH4502C_MID_VOLTAGE 2.5f
+```
+
+**PH4502C_PH_VOLTAGE_PER_PH**
+
+The `PH4502C_PH_VOLTAGE_PER_PH` constant defines the rate of change in voltage per unit change in pH. The value is set to `0.18`.
+
+```cpp
+
+#define PH4502C_PH_VOLTAGE_PER_PH 0.18f
 ```
 
 ---

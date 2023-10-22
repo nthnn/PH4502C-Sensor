@@ -1,6 +1,6 @@
-name: Arduino CI
+name: Arduino CICD
 
-on: [pull_request]
+on: [pull_request, push]
 jobs:
   lint:
     runs-on: ubuntu-latest

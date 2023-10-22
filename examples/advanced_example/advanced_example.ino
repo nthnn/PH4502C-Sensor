@@ -34,21 +34,21 @@ void setup() {
     Serial.println("Starting PH4502C Sensor...");
 
     // Initialize the PH4502 instance
-    ph4502.init();
+    ph4502c.init();
 }
 
 void loop() {
     // Read the temperature from the sensor
     Serial.println("Temperature reading:"
-        + String(ph4502.read_temp()));
+        + String(ph4502c.read_temp()));
 
     // Read the pH level by average
     Serial.println("pH Level Reading: "
-        + String(ph4502.read_ph_level()));
+        + String(ph4502c.read_ph_level()));
 
     // Read a single pH level value
     Serial.println("pH Level Single Reading: "
-        + String(ph4502.read_ph_level_single()));
+        + String(ph4502c.read_ph_level_single()));
 
     delay(1000);
 }

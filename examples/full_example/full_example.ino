@@ -1,8 +1,11 @@
-/*
-    Full example for PH4502C_Sensor.h
-    By: Nathanne Isip
-    27/06/2023
-*/
+/**
+ * 
+  *  Full example for PH4502C_Sensor.h
+  * 
+  *  By: Nathanne Isip
+  *  27/06/2023
+  * 
+  */
 
 #include <ph4502c_sensor.h>
 
